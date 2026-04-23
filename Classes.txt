@@ -1,0 +1,56 @@
+CREATION OF CLASS AND OBJECT:-
+
+1)Create a class Bird that inherits from Animal and overrides speak() to say "Tweet
+
+class Animal:
+   def speak(self):
+      print("Animal Speaks")
+class Bird(Animal):
+   def speak(self):
+      print("Tweet")
+a=Animal()
+a.speak()
+b=Bird()
+b.speak()
+
+2)Create a class Book with title and author, and a method to display them
+
+class Book:
+   def __init__(self,author,title):
+      self.author=author
+      self.title=title
+   def display(self):
+      print(f"{self.author} is in title {self.title}")
+b1=Book("Kavin","King")
+b1.display()
+
+3)Create a class Fan with a default speed of "Medium" and a method status()
+
+class Fan:
+   def __init__(self, speed="Medium"):
+      self.speed=speed
+   def switch_on (self):
+      print(f"{self.speed} fan is on")
+fan1=Fan()
+fan1.switch_on()
+fan2=Fan("Fast")
+fan2.switch_on()
+
+4)Create a class Rectangle with length and width, and method area().
+
+class Rectangle:
+   def __init__(self,length,width):
+      self.length=length
+      self.width=width
+   def area(self):
+      return self.length*self.width
+r=Rectangle(6,7)
+print("Area:",r.area())
+
+5)Create a class Car with a method drive() that prints "Vroom!"
+
+class Car:
+   def drive(self):
+      print("Vroom")
+my_car=Car()
+my_car.drive()
