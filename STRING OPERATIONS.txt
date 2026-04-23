@@ -1,0 +1,47 @@
+STRING OPERATIONS
+
+1)To verify whether the password is valid or not , it must have atleast 8 letters long with atleast one special character
+
+def verify_password(password):
+    if len(password) < 8:
+        return "Password must be at least 8 characters long"
+
+    has_letter = False
+    has_digit = False
+    has_special = False
+
+    for ch in password:
+        if ch.isalpha():
+            has_letter = True
+        elif ch.isdigit():
+            has_digit = True
+        else:
+            has_special = True
+
+    if has_letter and has_digit and has_special:
+        return "Password is valid"
+    else:
+        return "Password must contain letters, numbers, and special characters"
+
+# Input from user
+pwd = input("Enter password: ")
+print(verify_password(pwd))
+
+2)To verify whether the given email is correct or not
+
+import re
+
+def is_valid_email(email):
+    regex_pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,7}$'
+
+    if re.fullmatch(regex_pattern, email):
+        return True
+    return False
+
+# User Input
+user_email = input("Enter your email address: ").strip()
+
+if is_valid_email(user_email):
+    print(f"{user_email}' is a valid email")
+else:
+    print(f"{user_email}' is NOT a valid email")
